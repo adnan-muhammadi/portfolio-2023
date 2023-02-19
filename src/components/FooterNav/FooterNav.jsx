@@ -7,7 +7,7 @@ const FooterNav = () => {
         <ul>
           <li>
             <a
-              href="https://theadnan.vercel.app/"
+              href="https://muhammadadnan.vercel.app/"
               target="_blank"
               rel="noreferrer"
             >
