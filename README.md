@@ -3,7 +3,7 @@
   <a href="https://theadnan.vercel.app" target="_blank">theadnan.vercel.app</a>
 </h2>
 <div align="center">
-  <img alt="Demo" src="https://github.com/Abhirajmaid/Media-Storage/blob/master/Portfolio.png?raw=true" />
+  <img alt="Demo" src="https://raw.githubusercontent.com/adnan-muhammadi/portfolio-2023/main/public/image.png" />
 </div>
 
 <br/>
