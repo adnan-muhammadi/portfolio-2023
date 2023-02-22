@@ -3,8 +3,8 @@ import "./style.css";
 import { Icon } from "@iconify/react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
-// import { db } from "../../Firebase";
-// import emailjs from "emailjs-com";
+import { db } from "../../Firebase";
+import emailjs from "emailjs-com";
 
 const contactContainer = {
   initial: {
@@ -32,70 +32,70 @@ const contactPage = {
 };
 
 const Contact = () => {
-  // const [userName, setUserName] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [msg, setMsg] = useState("");
-  // const [loader, setLoader] = useState(false);
-  // const [error, setError] = useState("");
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [msg, setMsg] = useState("");
+  const [loader, setLoader] = useState(false);
+  const [error, setError] = useState("");
 
   const style = {
     color: "White",
-    marginBottom: "30px",
+    marginTop: "100px",
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-  //   if (userName !== "" && email !== "" && regex.test(email) !== false) {
-  //     setLoader(true);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    if (userName !== "" && email !== "" && regex.test(email) !== false) {
+      setLoader(true);
 
-  //     db.collection("connection")
-  //       .add({
-  //         name: userName,
-  //         email: email,
-  //         message: msg,
-  //       })
-  //       .then(() => {
-  //         setLoader(false);
-  //         alert(
-  //           "Thanks For Your Showing interest in my profile😊. It means a lot!💖"
-  //         );
-  //       })
-  //       .catch((error) => {
-  //         alert(error.message);
-  //         setLoader(false);
-  //       });
+      db.collection("connection")
+        .add({
+          name: userName,
+          email: email,
+          message: msg,
+        })
+        .then(() => {
+          setLoader(false);
+          alert(
+            "Thanks For Your Showing interest in my profile😊. It means a lot!💖"
+          );
+        })
+        .catch((error) => {
+          alert(error.message);
+          setLoader(false);
+        });
 
-  //     //emailjs here...
-  //     emailjs
-  //       .sendForm(
-  //         "service_34ujha8",
-  //         "template_tyvfra1",
-  //         e.target,
-  //         "YTEhRMRQjF_K5R1R4"
-  //       )
-  //       .then((res) => {
-  //         console.log(res);
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //       });
+      //emailjs here...
+      emailjs
+        .sendForm(
+          "service_34ujha8",
+          "template_tyvfra1",
+          e.target,
+          "YTEhRMRQjF_K5R1R4"
+        )
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
 
-  //     setUserName("");
-  //     setEmail("");
-  //     setMsg("");
-  //     setError("Check your inbox...");
-  //     setTimeout(() => {
-  //       setError("");
-  //     }, 4000);
-  //     setError("Check your inbox...");
-  //   } else if (userName === "" || email === "") {
-  //     console.log("Seriously, You don't know anything ? 😂😂");
-  //     setError("Above fields are blank. 😶");
-  //   } else if (regex.test(email) === false) {
-  //     setError("Please enter correct Email!");
-  //   }
-  // };
+      setUserName("");
+      setEmail("");
+      setMsg("");
+      setError("Check your inbox...");
+      setTimeout(() => {
+        setError("");
+      }, 4000);
+      setError("Check your inbox...");
+    } else if (userName === "" || email === "") {
+      console.log("Seriously, You don't know anything ? 😂😂");
+      setError("Above fields are blank. 😶");
+    } else if (regex.test(email) === false) {
+      setError("Please enter correct Email!");
+    }
+  };
 
   return (
     <>
@@ -119,10 +119,10 @@ const Contact = () => {
             <form
               className="connect-form"
               //   onSubmit={handleSubmit}
-              // onSubmit={handleSubmit}
+              onSubmit={handleSubmit}
             >
               <h1>Let's Get in Contact 👋</h1>
-              {/* <input
+              <input
                 type="text"
                 className="input"
                 placeholder="Name"
@@ -158,18 +158,8 @@ const Contact = () => {
               >
                 Submit
               </motion.button>
-              <p className="error">{error}</p> */}
-              <p>
-              I'm available for freelance or contract work and I'd love to help bring your web development project to life. Please feel free to contact me to discuss your project requirements and how we can work together.
-              </p>
-              <h1></h1>
-              
-              <a className="sms" href="tel:+92 317 7912895">
-              Phone: +92 317 7912895
-              </a>
-              <h1></h1>
-              <a className="sms" href="mailto:adnan.jmuhammadi@outlook.com">Email: adnan.jmuhammadi@outlook.com</a>
-            </form>
+              <p className="error">{error}</p>
+              </form>
           </motion.div>
         </div>
       </motion.div>

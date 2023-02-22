@@ -8,7 +8,7 @@ export const WorkData = [
       "BG provides the highest quality products and equipment to dealerships, independent shops and franchises so they can perform BG Automotive Maintenance Services on vehicles."
     ],
 
-    demo: "/",
+    demo: "https://bgprod.com/",
     github: "https://github.com/bgproducts/",
     img: "https://www.bgcentralvalley.com/uploads/2/5/3/8/25387677/_4049985_orig.jpg",
     side: true,
@@ -20,7 +20,7 @@ export const WorkData = [
       "Engro is committed to helping overcome Pakistan’s energy crisis by using the country’s resources, and strengthen the agri-food sector by equipping our farmers with the right tools and capabilities.",
     tags: ["From uplifting the agri-sector, to improving the food value chain, to providing sustainable energy solutions, Engro has left no stone unturned in its pursuit of uplifting the entire nation in a timespan of over 50 years."],
 
-    demo: "https://www.engro.com/",
+    demo: "https://engro.com/",
     // github: "https://github.com/Abhirajmaid/Landing-Page",
     img: "https://propakistani.pk/wp-content/uploads/2021/10/engro-PP.jpg",
     side: false,
